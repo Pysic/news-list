@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class ControllersUtils{
-    func checkFields(with fields: [UITextField]) -> Bool{
+    func checkFields(of fields: [UITextField]) -> Bool{
         var status: Bool = true
         for field in fields {
             if !field.checkField(){

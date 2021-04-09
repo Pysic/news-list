@@ -36,6 +36,9 @@
                                 <rect key="frame" x="20" y="362" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Lr2-M8-Jgp" id="W2W-gF-wn3"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nfw-Ng-pxb">
                                 <rect key="frame" x="20" y="404" width="374" height="34"/>
@@ -101,7 +104,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="News" id="Z2W-EV-D7c"/>
                     <connections>
-                        <outlet property="nameInput" destination="93R-7p-fZd" id="3U5-yN-ivA"/>
+                        <outlet property="emailInput" destination="93R-7p-fZd" id="3U5-yN-ivA"/>
                         <outlet property="passwordInput" destination="nfw-Ng-pxb" id="LDa-uY-V3v"/>
                     </connections>
                 </viewController>

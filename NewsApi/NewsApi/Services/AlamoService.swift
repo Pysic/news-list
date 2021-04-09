@@ -26,25 +26,25 @@ class AlamoService{
     
     func signApi<T: Decodable>(url endpoint:URLS_API, parameters: [String: String], completion: @escaping (SignModel) -> Void, onApiError: @escaping (T) -> Void, onError: @escaping (HttpError) -> Void){
         AF.request(endpoint.rawValue, method: .post,  parameters: parameters, encoding: JSONEncoding.default)
-                .responseJSON { response in
-                    switch response.result {
-                    case .success(let value):
-                        print("value: \(value)")
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    print("value: \(value)")
+                    do {
+                        let json = try JSONDecoder().decode(SignModel.self, from: response.data!)
+                        completion(json)
+                    } catch {
                         do {
-                            let json = try JSONDecoder().decode(SignModel.self, from: response.data!)
-                            completion(json)
+                            let json = try JSONDecoder().decode(T.self, from: response.data!)
+                            onApiError(json)
                         } catch {
-                            do {
-                                let json = try JSONDecoder().decode(T.self, from: response.data!)
-                                onApiError(json)
-                            } catch {
-                                onError(.errorData)
-                            }
+                            onError(.errorData)
                         }
-                    case .failure(let error):
-                        onError(.errorResponseCode)
-                        print(error)
                     }
+                case .failure(let error):
+                    onError(.errorResponseCode)
+                    print(error)
+                }
             }
     }
 }

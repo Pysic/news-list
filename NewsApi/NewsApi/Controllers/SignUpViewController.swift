@@ -20,7 +20,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func signUp(){
-        if ControllersUtils().checkFields(with: [nameInput, emailInput, passwordInput, confirmPasswordInput]){
+        if ControllersUtils().checkFields(of: [nameInput, emailInput, passwordInput, confirmPasswordInput]){
             if (passwordInput.text ?? "") == (confirmPasswordInput.text ?? ""){
                 executeSignUpRequest()
             } else {
