@@ -15,7 +15,6 @@ import Alamofire
 enum HttpError {
     case errorData
     case errorResponseCode
-    case taskError
 }
 
 enum URLS_API: String {
@@ -40,11 +39,10 @@ class AlamoService{
                                 onApiError(json)
                             } catch {
                                 onError(.errorData)
-                                print("erro")
                             }
                         }
                     case .failure(let error):
-                        print("error")
+                        onError(.errorResponseCode)
                         print(error)
                     }
             }

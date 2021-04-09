@@ -28,8 +28,8 @@ class SignInViewController: UIViewController {
         
         AlamoService().signApi(url:.SIGN_IN, parameters: parameters, completion: { (response) in
             print("RESPOSTA \(response.token)")
-        }, onApiError: {(response: SignErrorMessageModel) in
-            print(response.message)
+        }, onApiError: {(response: SignErrorCodeModel) in
+            print(response.code)
         }, onError: {(response) in
             
         })

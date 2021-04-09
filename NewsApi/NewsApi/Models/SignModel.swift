@@ -12,9 +12,9 @@ struct SignModel : Codable {
 }
 
 struct SignErrorModel : Codable {
-    var errors: [SignErrorMessageModel]
+    var errors: [SignErrorCodeModel]
 }
 
-struct SignErrorMessageModel : Codable {
-    var message: String
+struct SignErrorCodeModel : Codable {
+    var code: String
 }

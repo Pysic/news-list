@@ -41,12 +41,36 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         AlamoService().signApi(url:.SIGN_UP, parameters: parameters, completion: { (response) in
             self.view.loaderElement(indicator: self.indicator, show: false)
+            self.alertModal(title: "Usuário cadastrado!", message: "Faça login com suas credenciais.", onOk: {
+                self.dismiss(animated: true, completion: nil)
+                return
+            })
             print("RESPOSTA \(response.token)")
         }, onApiError: {(response: SignErrorModel) in
             self.view.loaderElement(indicator: self.indicator, show: false)
-            print(response.errors[0].message)
+            var userMessage: String = ""
+            
+            switch response.errors[0].code{
+            case "TAKEN":
+                userMessage = "Esse e-mail já foi cadastrado."
+                break
+            case "INVALID":
+                userMessage = "Formato de e-mail inválido."
+                break
+            default:
+                userMessage = "Erro Desconhecido."
+            }
+            
+            self.alertModal(title: "Erro no e-mail.", message: userMessage, onOk: {
+                return
+            })
+            
         }, onError: {(response) in
             self.view.loaderElement(indicator: self.indicator, show: false)
+            self.alertModal(title: "Erro!", message: "Houve um erro desconhecido, entre em contato com o suporte.", onOk: {
+                return
+            })
+            print(response)
         })
     }
     
