@@ -48,13 +48,14 @@ class AlamoService{
             }
     }
     
-    func newsApi(url endpoint:NEWS_URLS, headers: HTTPHeaders, completion: @escaping (NewsModel) -> Void, onError: @escaping (HttpError) -> Void){
-        AF.request(endpoint.rawValue + String(ControllersUtils().getNextPageNumber()), method: .get, encoding: JSONEncoding.default, headers: headers)
+    func newsApi<T: Decodable>(url:NEWS_URLS, headers: HTTPHeaders, completion: @escaping (T) -> Void, onError: @escaping (HttpError) -> Void){
+        let endpoint = url == .NEWS ? url.rawValue + String(ControllersUtils().getNextPageNumber()) : url.rawValue
+        AF.request(endpoint, method: .get, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { response in
                 switch response.result {
                 case .success(let value):
                     do {
-                        let json = try JSONDecoder().decode(NewsModel.self, from: response.data!)
+                        let json = try JSONDecoder().decode(T.self, from: response.data!)
                         completion(json)
                     } catch {
                         onError(.errorData)

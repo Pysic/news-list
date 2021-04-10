@@ -17,6 +17,10 @@ struct NewsModel : Codable {
     var pagination: NewsInfoModel
 }
 
+struct HighlightsModel : Codable {
+    var data: [NewsDataModel]
+}
+
 struct NewsDataModel : Codable {
     var title: String
     var description: String

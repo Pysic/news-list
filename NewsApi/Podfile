@@ -8,6 +8,7 @@ target 'NewsApi' do
   # Pods for NewsApi
   pod 'Kingfisher'
   pod 'Alamofire'
+  pod 'FSPagerView'
   
 
   target 'NewsApiTests' do
