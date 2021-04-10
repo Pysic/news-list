@@ -1,7 +1,3 @@
-//
-//  SignUpModel.swift
-//  NewsApi
-//
 //  Created by Pietro Rischi Nunes (E) on 08/04/21.
 //
 

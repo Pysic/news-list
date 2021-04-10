@@ -32,7 +32,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         AlamoService().signApi(url:.SIGN_IN, parameters: parameters, completion: { (response) in
             self.view.loaderElement(indicator: self.indicator, show: false)
-            print("RESPOSTA \(response.token)")
+            ControllersUtils().setToken(token: response.token)
+            self.performSegue(withIdentifier: "loggedScreen", sender: nil)
         }, onApiError: {(response: SignErrorCodeModel) in
             self.view.loaderElement(indicator: self.indicator, show: false)
             var userMessage: String = ""
