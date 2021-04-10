@@ -14,6 +14,13 @@ class NewsFavoritesDetailsViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var favButton: UIButton!
     @IBOutlet weak var contentLabel: UITextView!
+    
+    @IBAction func clipButton(_ sender: UIButton) {
+        UIPasteboard.general.string = article.url
+        self.alertModal(title: "Url Copiada!", message: "Compartilhe colando em suas redes.", onOk: {
+            return
+        })
+    }
     @IBAction func unfavoriteButton(_ sender: Any) {
         self.alertArticleDelete(index: index ?? 0)
     }

@@ -15,6 +15,12 @@ class NewsFeedDetailsViewController: UIViewController {
     @IBOutlet weak var publishDateLabel: UILabel!
     @IBOutlet weak var contentText: UITextView!
     @IBOutlet weak var favButton: UIButton!
+    @IBAction func clipButton(_ sender: UIButton) {
+        UIPasteboard.general.string = article.url
+        self.alertModal(title: "Url Copiada!", message: "Compartilhe colando em suas redes.", onOk: {
+            return
+        })
+    }
     @IBAction func favoriteButton(_ sender: UIButton) {
         article.favorite ? CoreDataHandler.shared.deleteNewsByArticle(article: article) : CoreDataHandler.shared.insertNews(article: article)
         sender.renderFavoriteButton(article: article)

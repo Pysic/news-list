@@ -367,10 +367,22 @@
                                     <action selector="favoriteButton:" destination="LNE-Md-sba" eventType="touchUpInside" id="Ovv-JE-XIE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7J-bG-wnI">
+                                <rect key="frame" x="63" y="220.5" width="32" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="LyX-PH-mT3" userLabel="width = 35"/>
+                                    <constraint firstAttribute="height" constant="30" id="lo8-GD-QUl" userLabel="height = 32"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="paperclip" catalog="system"/>
+                                <connections>
+                                    <action selector="clipButton:" destination="LNE-Md-sba" eventType="touchUpInside" id="qhb-k1-Xxc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LbO-aj-pOX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Y7J-bG-wnI" firstAttribute="top" secondItem="eHQ-DT-MpW" secondAttribute="bottom" constant="8" id="2ir-Wy-yGZ"/>
                             <constraint firstItem="r0v-2C-A4e" firstAttribute="leading" secondItem="LbO-aj-pOX" secondAttribute="leading" constant="20" id="6PX-Yr-Rx2"/>
                             <constraint firstItem="lDW-TD-0RU" firstAttribute="top" secondItem="Xp8-Ez-X32" secondAttribute="bottom" constant="8" id="Ahn-2Z-rQ4"/>
                             <constraint firstItem="r0v-2C-A4e" firstAttribute="top" secondItem="bqK-42-4Os" secondAttribute="bottom" constant="8" id="Eyz-7P-yvl"/>
@@ -381,6 +393,7 @@
                             <constraint firstItem="sVG-2E-Jx0" firstAttribute="leading" secondItem="LbO-aj-pOX" secondAttribute="leading" constant="20" id="dlw-v6-DIr"/>
                             <constraint firstItem="r0v-2C-A4e" firstAttribute="bottom" secondItem="LbO-aj-pOX" secondAttribute="bottom" constant="8" id="fIi-DO-AaZ"/>
                             <constraint firstItem="Xp8-Ez-X32" firstAttribute="leading" secondItem="LbO-aj-pOX" secondAttribute="leading" constant="20" id="hFQ-QI-Han"/>
+                            <constraint firstItem="Y7J-bG-wnI" firstAttribute="leading" secondItem="sVG-2E-Jx0" secondAttribute="trailing" constant="8" id="hj5-p7-YhY"/>
                             <constraint firstItem="LbO-aj-pOX" firstAttribute="trailing" secondItem="Xp8-Ez-X32" secondAttribute="trailing" constant="20" id="kXc-Z7-tuw"/>
                             <constraint firstItem="bqK-42-4Os" firstAttribute="leading" secondItem="LbO-aj-pOX" secondAttribute="leading" constant="20" id="mhX-mD-Q7B"/>
                             <constraint firstItem="LbO-aj-pOX" firstAttribute="trailing" secondItem="lDW-TD-0RU" secondAttribute="trailing" constant="20" id="nyO-Wi-Aze"/>
@@ -543,6 +556,17 @@
                                     <action selector="unfavoriteButton:" destination="XSk-nD-V1h" eventType="touchUpInside" id="x8A-d9-xrm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4K-Bx-DEy">
+                                <rect key="frame" x="63" y="308.5" width="32" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="9AZ-EE-ecO" userLabel="width = 35"/>
+                                    <constraint firstAttribute="height" constant="30" id="Ej0-cw-AnR" userLabel="height = 32"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="paperclip" catalog="system"/>
+                                <connections>
+                                    <action selector="clipButton:" destination="XSk-nD-V1h" eventType="touchUpInside" id="y7K-z2-aeA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MEX-Lz-6U6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -550,6 +574,7 @@
                             <constraint firstItem="hvV-1i-csT" firstAttribute="top" secondItem="U8k-JW-Wyy" secondAttribute="bottom" constant="8" id="3MI-XM-mTA"/>
                             <constraint firstItem="U8k-JW-Wyy" firstAttribute="top" secondItem="9w3-pi-EOU" secondAttribute="bottom" constant="8" id="3PM-jL-xjn"/>
                             <constraint firstItem="neC-Kc-FK4" firstAttribute="top" secondItem="9w3-pi-EOU" secondAttribute="bottom" constant="8" id="Egx-dQ-I8Z"/>
+                            <constraint firstItem="M4K-Bx-DEy" firstAttribute="top" secondItem="vPY-5N-YVf" secondAttribute="bottom" constant="8" id="HBU-pb-Lg5"/>
                             <constraint firstItem="neC-Kc-FK4" firstAttribute="leading" secondItem="U8k-JW-Wyy" secondAttribute="trailing" id="KE5-Zi-6qB"/>
                             <constraint firstItem="vPY-5N-YVf" firstAttribute="leading" secondItem="MEX-Lz-6U6" secondAttribute="leading" id="Mo0-qN-gKe"/>
                             <constraint firstItem="9w3-pi-EOU" firstAttribute="leading" secondItem="MEX-Lz-6U6" secondAttribute="leading" constant="20" id="TBH-Wz-Afh"/>
@@ -559,6 +584,7 @@
                             <constraint firstItem="vPY-5N-YVf" firstAttribute="top" secondItem="MEX-Lz-6U6" secondAttribute="top" id="abu-dP-fk4"/>
                             <constraint firstItem="U8k-JW-Wyy" firstAttribute="leading" secondItem="MEX-Lz-6U6" secondAttribute="leading" constant="20" id="b3T-Bg-gtq"/>
                             <constraint firstItem="vPY-5N-YVf" firstAttribute="trailing" secondItem="MEX-Lz-6U6" secondAttribute="trailing" id="eHM-Lc-T9V"/>
+                            <constraint firstItem="M4K-Bx-DEy" firstAttribute="leading" secondItem="2l0-tQ-QiC" secondAttribute="trailing" constant="8" id="h6H-7f-REn"/>
                             <constraint firstItem="2l0-tQ-QiC" firstAttribute="leading" secondItem="MEX-Lz-6U6" secondAttribute="leading" constant="20" id="oEL-tM-gok"/>
                             <constraint firstItem="9w3-pi-EOU" firstAttribute="top" secondItem="2l0-tQ-QiC" secondAttribute="bottom" constant="8" id="ttm-Ea-1t0"/>
                             <constraint firstAttribute="bottom" secondItem="hvV-1i-csT" secondAttribute="bottom" constant="8" id="uJm-cz-1L1"/>
@@ -583,6 +609,7 @@
     </scenes>
     <resources>
         <image name="book.circle" catalog="system" width="128" height="121"/>
+        <image name="paperclip" catalog="system" width="121" height="128"/>
         <image name="person.and.person" catalog="system" width="128" height="81"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
