@@ -290,28 +290,28 @@
             </objects>
             <point key="canvasLocation" x="57.971014492753625" y="91.741071428571431"/>
         </scene>
-        <!--View Controller-->
+        <!--News Details View Controller-->
         <scene sceneID="TPM-GK-aU9">
             <objects>
-                <viewController id="LNE-Md-sba" sceneMemberID="viewController">
+                <viewController id="LNE-Md-sba" customClass="NewsDetailsViewController" customModule="NewsApi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QPD-28-5o5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eHQ-DT-MpW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eHQ-DT-MpW">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="213"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="213" id="mN1-js-WMx"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xp8-Ez-X32">
-                                <rect key="frame" x="20" y="221" width="374" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="221" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqK-42-4Os">
-                                <rect key="frame" x="20" y="250" width="197" height="21"/>
+                                <rect key="frame" x="20" y="255.5" width="197" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="197" id="LWF-Xr-iYr"/>
                                 </constraints>
@@ -320,13 +320,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDW-TD-0RU">
-                                <rect key="frame" x="225" y="250" width="169" height="21"/>
+                                <rect key="frame" x="225" y="255.5" width="169" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="r0v-2C-A4e">
-                                <rect key="frame" x="20" y="279" width="374" height="537"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0v-2C-A4e">
+                                <rect key="frame" x="20" y="284.5" width="374" height="531.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -354,6 +354,13 @@
                             <constraint firstItem="eHQ-DT-MpW" firstAttribute="top" secondItem="LbO-aj-pOX" secondAttribute="top" id="slS-Ct-ggK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="bqK-42-4Os" id="No6-dO-8LN"/>
+                        <outlet property="contentText" destination="r0v-2C-A4e" id="M7Q-SV-HWB"/>
+                        <outlet property="newsImage" destination="eHQ-DT-MpW" id="AlW-dp-Bd3"/>
+                        <outlet property="publishDateLabel" destination="lDW-TD-0RU" id="2Cd-s7-pcK"/>
+                        <outlet property="titleLabel" destination="Xp8-Ez-X32" id="qBu-Cx-oiF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N8x-Ko-9Q1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -26,6 +26,20 @@ struct NewsDataModel : Codable {
     var highlight: Bool
     var url: String
     var image_url: String
+    
+    var format_date: String{
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM dd,yyyy"
+
+        if let date = dateFormatterGet.date(from: published_at) {
+            return dateFormatterPrint.string(from: date)
+        } else {
+            return ""
+        }
+    }
 }
 
 struct NewsInfoModel : Codable {

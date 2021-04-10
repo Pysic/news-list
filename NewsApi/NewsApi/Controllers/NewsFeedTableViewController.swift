@@ -36,6 +36,15 @@ class NewsFeedTableViewController: UITableViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.view.endEditing(true)
+        
+        if let details = segue.destination as? NewsDetailsViewController{
+            let article = news[tableView.indexPathForSelectedRow?.row ?? 0]
+            details.article = article
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
