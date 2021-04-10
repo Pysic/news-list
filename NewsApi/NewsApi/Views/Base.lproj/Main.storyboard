@@ -212,14 +212,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="r4I-FX-RLZ" customClass="FSPagerView" customModule="FSPagerView">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="PLY-rh-swF">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" id="r4I-FX-RLZ" customClass="FSPagerView" customModule="FSPagerView">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="QyK-RM-6Oa" id="Hbi-xg-Vpy"/>
+                                        <outlet property="delegate" destination="QyK-RM-6Oa" id="zag-oL-5WL"/>
+                                    </connections>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9t3-Mw-cME">
+                                    <rect key="frame" x="0.0" y="300" width="414" height="50"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timeline News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH4-hb-n5o">
+                                            <rect key="frame" x="8" y="11.5" width="398" height="27"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="cH4-hb-n5o" firstAttribute="centerY" secondItem="9t3-Mw-cME" secondAttribute="centerY" id="P9e-zg-0q1"/>
+                                        <constraint firstItem="cH4-hb-n5o" firstAttribute="leading" secondItem="9t3-Mw-cME" secondAttribute="leading" constant="8" id="URT-YT-g6d"/>
+                                        <constraint firstAttribute="trailing" secondItem="cH4-hb-n5o" secondAttribute="trailing" constant="8" id="yws-lP-8cL"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <connections>
-                                <outlet property="dataSource" destination="QyK-RM-6Oa" id="Hbi-xg-Vpy"/>
-                                <outlet property="delegate" destination="QyK-RM-6Oa" id="zag-oL-5WL"/>
-                            </connections>
+                            <constraints>
+                                <constraint firstItem="9t3-Mw-cME" firstAttribute="top" secondItem="r4I-FX-RLZ" secondAttribute="bottom" id="CAv-TQ-aUa"/>
+                                <constraint firstAttribute="trailing" secondItem="9t3-Mw-cME" secondAttribute="trailing" id="DaL-j0-od8"/>
+                                <constraint firstAttribute="bottom" secondItem="9t3-Mw-cME" secondAttribute="bottom" id="JNj-JZ-CbW"/>
+                                <constraint firstItem="9t3-Mw-cME" firstAttribute="leading" secondItem="PLY-rh-swF" secondAttribute="leading" id="Jto-so-OkG"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="articleCell" rowHeight="350" id="QZs-U3-dZp" customClass="NewsFeedTableViewCell" customModule="NewsApi" customModuleProvider="target">
@@ -419,7 +449,6 @@
         <!--Favorites-->
         <scene sceneID="QVk-86-08T">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pgz-AO-eCW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Whk-lj-Eld" customClass="NewsFavoritesTableViewController" customModule="NewsApi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="350" sectionHeaderHeight="28" sectionFooterHeight="28" id="Dd6-Z1-yk0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -499,6 +528,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Favorites" id="abk-KY-9Pl"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgz-AO-eCW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="813" y="92"/>
         </scene>
