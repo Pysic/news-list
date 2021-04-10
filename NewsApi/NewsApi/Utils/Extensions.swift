@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 import UIKit
 
 extension UITextField {
@@ -23,7 +24,11 @@ extension UITextField {
 }
 
 extension UIViewController {
-
+    var coreDataContext: NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
+    
     func alertModal(title: String, message: String, onOk: @escaping () -> Void){
         let refreshAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
 

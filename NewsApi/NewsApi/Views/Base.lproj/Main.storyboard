@@ -316,14 +316,22 @@
                                     <constraint firstAttribute="height" constant="213" id="mN1-js-WMx"/>
                                 </constraints>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0v-2C-A4e">
+                                <rect key="frame" x="20" y="324.5" width="374" height="491.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xp8-Ez-X32">
-                                <rect key="frame" x="20" y="221" width="374" height="26.5"/>
+                                <rect key="frame" x="20" y="261" width="374" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqK-42-4Os">
-                                <rect key="frame" x="20" y="255.5" width="197" height="21"/>
+                                <rect key="frame" x="20" y="295.5" width="197" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="197" id="LWF-Xr-iYr"/>
                                 </constraints>
@@ -332,29 +340,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDW-TD-0RU">
-                                <rect key="frame" x="225" y="255.5" width="169" height="21"/>
+                                <rect key="frame" x="225" y="295.5" width="169" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0v-2C-A4e">
-                                <rect key="frame" x="20" y="284.5" width="374" height="531.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVG-2E-Jx0">
+                                <rect key="frame" x="20" y="220.5" width="35" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="KDI-K1-xOR"/>
+                                    <constraint firstAttribute="height" constant="32" id="sgl-TQ-RwB"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="star" catalog="system"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LbO-aj-pOX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="r0v-2C-A4e" firstAttribute="leading" secondItem="LbO-aj-pOX" secondAttribute="leading" constant="20" id="6PX-Yr-Rx2"/>
                             <constraint firstItem="lDW-TD-0RU" firstAttribute="top" secondItem="Xp8-Ez-X32" secondAttribute="bottom" constant="8" id="Ahn-2Z-rQ4"/>
-                            <constraint firstItem="Xp8-Ez-X32" firstAttribute="top" secondItem="eHQ-DT-MpW" secondAttribute="bottom" constant="8" id="FAc-Ja-pCl"/>
+                            <constraint firstItem="r0v-2C-A4e" firstAttribute="top" secondItem="bqK-42-4Os" secondAttribute="bottom" constant="8" id="Eyz-7P-yvl"/>
                             <constraint firstItem="bqK-42-4Os" firstAttribute="top" secondItem="Xp8-Ez-X32" secondAttribute="bottom" constant="8" id="Iwf-7T-2BT"/>
                             <constraint firstItem="eHQ-DT-MpW" firstAttribute="leading" secondItem="LbO-aj-pOX" secondAttribute="leading" id="Oun-hF-xPD"/>
-                            <constraint firstItem="r0v-2C-A4e" firstAttribute="top" secondItem="bqK-42-4Os" secondAttribute="bottom" constant="8" id="ZU6-zH-LT6"/>
+                            <constraint firstItem="sVG-2E-Jx0" firstAttribute="top" secondItem="eHQ-DT-MpW" secondAttribute="bottom" constant="8" id="QLb-QM-vd7"/>
+                            <constraint firstItem="Xp8-Ez-X32" firstAttribute="top" secondItem="sVG-2E-Jx0" secondAttribute="bottom" constant="8" id="bpW-ka-XTx"/>
+                            <constraint firstItem="sVG-2E-Jx0" firstAttribute="leading" secondItem="LbO-aj-pOX" secondAttribute="leading" constant="20" id="dlw-v6-DIr"/>
                             <constraint firstItem="r0v-2C-A4e" firstAttribute="bottom" secondItem="LbO-aj-pOX" secondAttribute="bottom" constant="8" id="fIi-DO-AaZ"/>
                             <constraint firstItem="Xp8-Ez-X32" firstAttribute="leading" secondItem="LbO-aj-pOX" secondAttribute="leading" constant="20" id="hFQ-QI-Han"/>
                             <constraint firstItem="LbO-aj-pOX" firstAttribute="trailing" secondItem="Xp8-Ez-X32" secondAttribute="trailing" constant="20" id="kXc-Z7-tuw"/>
@@ -382,6 +392,7 @@
     <resources>
         <image name="book.circle" catalog="system" width="128" height="121"/>
         <image name="person.and.person" catalog="system" width="128" height="81"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
