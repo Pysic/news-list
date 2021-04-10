@@ -44,6 +44,22 @@ struct NewsDataModel : Codable {
             return ""
         }
     }
+    var id: String{
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "yyyyMMddHHmmssSSS"
+
+        if let date = dateFormatterGet.date(from: published_at) {
+            return title[0 ..< 3] + description[0 ..< 3] + author[0 ..< 3] + dateFormatterPrint.string(from: date)
+        } else {
+            return ""
+        }
+    }
+    var favorite: Bool {
+        CoreDataHandler().checkSaved(id: id)
+    }
 }
 
 struct NewsInfoModel : Codable {

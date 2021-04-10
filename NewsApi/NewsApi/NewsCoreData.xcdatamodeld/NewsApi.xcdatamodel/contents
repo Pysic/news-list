@@ -5,11 +5,12 @@
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Transformable"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="NewsCoreData" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="NewsCoreData" positionX="-63" positionY="-18" width="128" height="163"/>
     </elements>
 </model>

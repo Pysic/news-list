@@ -12,80 +12,83 @@ import CoreData
 class CoreDataHandler: UIViewController {
     
     var newsData: NewsCoreData!
-//    var heroes: [HeroesData] = []
+    var news: [NewsCoreData] = []
     static let shared = CoreDataHandler()
     
     func insertNews(article: NewsDataModel){
         newsData = NewsCoreData(context: coreDataContext)
+        newsData.id = article.id
         newsData.title = article.title
-//        newsData.id = Int64(hero.id)
-//        heroData.name = hero.name
-//        heroData.information = hero.description
-//
-//        let imageUrl:URL = URL(string: hero.thumbnail.url)!
-//        let imageData:NSData = NSData(contentsOf: imageUrl)!
-//        let image = UIImage(data: imageData as Data)
-//        heroData.image = image
-//
-//        do{
-//            try coreDataContext.save()
-//        } catch {
-//            print(error.localizedDescription)
-//        }
+        newsData.author = article.author
+        newsData.desc = article.description
+        newsData.date = article.format_date
+        newsData.content = article.content
+        newsData.url = article.url
+        
+        let imageUrl:URL = URL(string: article.image_url)!
+        let imageData:NSData = NSData(contentsOf: imageUrl)!
+        let image = UIImage(data: imageData as Data)
+        newsData.image = image
+
+        do{
+            try coreDataContext.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
-//
-//    func deleteByHero(hero: HeroModel) {
-//        let fetchRequest: NSFetchRequest<HeroesData> = HeroesData.fetchRequest()
-//        fetchRequest.predicate = NSPredicate(format: "id = %d", hero.id)
-//
-//        var results: [HeroesData] = []
-//
-//        do {
-//            results = try coreDataContext.fetch(fetchRequest)
-//            coreDataContext.delete(results[0])
-//            try coreDataContext.save()
-//        }
-//        catch {
-//            print(error.localizedDescription)
-//        }
-//    }
-//
-//    func deleteByIndex(index: Int) {
-//        let hero = heroes[index]
-//        coreDataContext.delete(hero)
-//
-//        do {
-//            try coreDataContext.save()
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//    }
-//
-//    func loadHeroes() {
-//        let fetchRequest: NSFetchRequest<HeroesData> = HeroesData.fetchRequest()
-//        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-//        fetchRequest.sortDescriptors = [sortDescriptor]
-//        do{
-//            heroes = try coreDataContext.fetch(fetchRequest)
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//    }
-//
-//    func checkSaved(id: Int) -> Bool{
-//        let fetchRequest: NSFetchRequest<HeroesData> = HeroesData.fetchRequest()
-//        fetchRequest.predicate = NSPredicate(format: "id = %d", id)
-//
-//        var results: [HeroesData] = []
-//
-//        do {
-//            results = try coreDataContext.fetch(fetchRequest)
-//        }
-//        catch {
-//            print(error.localizedDescription)
-//        }
-//
-//        return results.count > 0
-//    }
+
+    func deleteNewsByArticle(article: NewsDataModel) {
+        let fetchRequest: NSFetchRequest<NewsCoreData> = NewsCoreData.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id = %@", article.id)
+
+        var results: [NewsCoreData] = []
+
+        do {
+            results = try coreDataContext.fetch(fetchRequest)
+            coreDataContext.delete(results[0])
+            try coreDataContext.save()
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    func deleteByIndex(index: Int) {
+        let article = news[index]
+        coreDataContext.delete(article)
+
+        do {
+            try coreDataContext.save()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    func loadNews() {
+        let fetchRequest: NSFetchRequest<NewsCoreData> = NewsCoreData.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        do{
+            news = try coreDataContext.fetch(fetchRequest)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    func checkSaved(id: String) -> Bool{
+        let fetchRequest: NSFetchRequest<NewsCoreData> = NewsCoreData.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+
+        var results: [NewsCoreData] = []
+
+        do {
+            results = try coreDataContext.fetch(fetchRequest)
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+
+        return results.count > 0
+    }
 }
 

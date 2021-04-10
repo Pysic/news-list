@@ -66,7 +66,7 @@ class NewsFeedTableViewController: UITableViewController, FSPagerViewDelegate,
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.view.endEditing(true)
         
-        if let details = segue.destination as? NewsDetailsViewController{
+        if let details = segue.destination as? NewsFeedDetailsViewController{
             let article = news[tableView.indexPathForSelectedRow?.row ?? 0]
             details.article = article
         }

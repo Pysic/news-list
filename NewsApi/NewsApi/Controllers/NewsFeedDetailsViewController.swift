@@ -7,13 +7,18 @@
 
 import UIKit
 
-class NewsDetailsViewController: UIViewController {
+class NewsFeedDetailsViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var publishDateLabel: UILabel!
     @IBOutlet weak var contentText: UITextView!
+    @IBOutlet weak var favButton: UIButton!
+    @IBAction func favoriteButton(_ sender: UIButton) {
+        article.favorite ? CoreDataHandler.shared.deleteNewsByArticle(article: article) : CoreDataHandler.shared.insertNews(article: article)
+        sender.renderFavoriteButton(article: article)
+    }
     
     var article: NewsDataModel!
     
@@ -21,6 +26,7 @@ class NewsDetailsViewController: UIViewController {
         super.viewDidLoad()
         titleLabel.numberOfLines = 0
         
+        favButton.renderFavoriteButton(article: article)
         titleLabel.text = article.title
         contentText.text = article.content
         authorLabel.text = article.author
