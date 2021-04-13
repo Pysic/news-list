@@ -12,6 +12,23 @@ import FSPagerView
 class NewsFeedTableViewController: UITableViewController, FSPagerViewDelegate,
                                    FSPagerViewDataSource {
 
+    @IBAction func calendarPicker(_ sender: UIDatePicker) {
+        if dateSwitch.isOn{
+            resetParams()
+            requestDateNews()
+        }
+    }
+    
+    @IBAction func dateSwitchClick(_ sender: UISwitch) {
+        if dateSwitch.isOn{
+            resetParams()
+            requestDateNews()
+        } else {
+            resetParams()
+            requestNews()
+        }
+    }
+    
     @IBOutlet weak var pagerView: FSPagerView! {
         didSet {
             self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "carouselCell")
@@ -19,9 +36,43 @@ class NewsFeedTableViewController: UITableViewController, FSPagerViewDelegate,
     }
     private var news: [NewsDataModel] = []
     private var highlights: [NewsDataModel] = []
+    @IBOutlet weak var calendarDate: UIDatePicker!
+    @IBOutlet weak var dateSwitch: UISwitch!
     private var isLoading: Bool = false
     private var totalPage: Int = 0
     private var indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+    
+    private func resetParams(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let dateFormat = formatter.string(from: calendarDate.date)
+        
+        ControllersUtils().setPublishDate(date: dateFormat)
+        ControllersUtils().resetPageNumber()
+        self.news = []
+    }
+    
+    private func requestDateNews(){
+        
+        self.isLoading = true
+        let headers: HTTPHeaders = [
+            "Authorization" : "Bearer \(ControllersUtils().getToken())",
+            "Content-Type": "application/json"
+        ]
+        
+        AlamoService().newsApi(url: .NEWS_DATE, headers: headers) { (response: NewsModel) in
+            self.news += response.data
+            self.totalPage = response.pagination.total_pages
+            DispatchQueue.main.async {
+                self.view.loaderElement(indicator: self.indicator, show: false)
+                self.tableView.reloadData()
+            }
+            self.isLoading = false
+        } onError: { (response) in
+            self.isLoading = false
+            print(response)
+        }
+    }
     
     private func requestNews(){
         self.isLoading = true
@@ -78,6 +129,7 @@ class NewsFeedTableViewController: UITableViewController, FSPagerViewDelegate,
         self.pagerView.transformer = FSPagerViewTransformer(type: .crossFading)
         self.pagerView.automaticSlidingInterval = 3.0
         self.pagerView.isInfinite = true
+        dateSwitch.isOn = false;
         
         requestHighlights()
         requestNews()
@@ -105,7 +157,7 @@ class NewsFeedTableViewController: UITableViewController, FSPagerViewDelegate,
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if(indexPath.row == news.count - 5 && !self.isLoading && news.count != self.totalPage){
-            requestNews()
+            dateSwitch.isOn ? requestDateNews() : requestNews()
         }
     }
     
