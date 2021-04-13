@@ -34,13 +34,27 @@ class NewsFeedTableViewController: UITableViewController, FSPagerViewDelegate,
             self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "carouselCell")
         }
     }
-    private var news: [NewsDataModel] = []
-    private var highlights: [NewsDataModel] = []
+    
     @IBOutlet weak var calendarDate: UIDatePicker!
     @IBOutlet weak var dateSwitch: UISwitch!
+    
+    private var news: [NewsDataModel] = []
+    private var highlights: [NewsDataModel] = []
+    
     private var isLoading: Bool = false
     private var totalPage: Int = 0
+    private var alertLabel = UILabel()
     private var indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+    
+    private func configureElements(){
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.pagerView.transformer = FSPagerViewTransformer(type: .crossFading)
+        self.pagerView.automaticSlidingInterval = 3.0
+        self.pagerView.isInfinite = true
+        dateSwitch.isOn = false;
+        self.alertLabel.text = "Não existem notícias."
+        self.alertLabel.textAlignment = .center
+    }
     
     private func resetParams(){
         let formatter = DateFormatter()
@@ -125,11 +139,8 @@ class NewsFeedTableViewController: UITableViewController, FSPagerViewDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated: false)
-        self.pagerView.transformer = FSPagerViewTransformer(type: .crossFading)
-        self.pagerView.automaticSlidingInterval = 3.0
-        self.pagerView.isInfinite = true
-        dateSwitch.isOn = false;
+        
+        configureElements()
         
         requestHighlights()
         requestNews()
@@ -143,6 +154,7 @@ class NewsFeedTableViewController: UITableViewController, FSPagerViewDelegate,
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        tableView.backgroundView = news.count == 0 ? alertLabel : nil
         return news.count
     }
 

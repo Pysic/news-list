@@ -213,11 +213,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="PLY-rh-swF">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" id="r4I-FX-RLZ" customClass="FSPagerView" customModule="FSPagerView">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <connections>
@@ -226,7 +226,7 @@
                                     </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9t3-Mw-cME">
-                                    <rect key="frame" x="0.0" y="300" width="414" height="50"/>
+                                    <rect key="frame" x="0.0" y="200" width="414" height="50"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timeline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH4-hb-n5o">
                                             <rect key="frame" x="8" y="12" width="85" height="27"/>
@@ -258,11 +258,8 @@
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="ZWh-ba-RhK" secondAttribute="bottom" constant="4" id="04z-O0-xyY"/>
                                         <constraint firstAttribute="trailing" secondItem="Cd1-B2-0Dv" secondAttribute="trailing" constant="8" id="C82-rv-hUZ"/>
-                                        <constraint firstItem="Cd1-B2-0Dv" firstAttribute="top" secondItem="9t3-Mw-cME" secondAttribute="top" constant="9" id="RDW-PK-h4A"/>
                                         <constraint firstAttribute="bottom" secondItem="Cd1-B2-0Dv" secondAttribute="bottom" constant="10" id="Vdm-f9-7rc"/>
                                         <constraint firstItem="Cd1-B2-0Dv" firstAttribute="leading" secondItem="ZWh-ba-RhK" secondAttribute="trailing" constant="4" id="Wbe-z7-d3V"/>
-                                        <constraint firstItem="cH4-hb-n5o" firstAttribute="top" secondItem="9t3-Mw-cME" secondAttribute="top" constant="12" id="ZRE-Dp-Yqd"/>
-                                        <constraint firstItem="ZWh-ba-RhK" firstAttribute="top" secondItem="9t3-Mw-cME" secondAttribute="top" constant="4" id="iut-0c-jtf"/>
                                         <constraint firstAttribute="bottom" secondItem="cH4-hb-n5o" secondAttribute="bottom" constant="11" id="qxd-Sm-GI8"/>
                                         <constraint firstItem="cH4-hb-n5o" firstAttribute="leading" secondItem="9t3-Mw-cME" secondAttribute="leading" constant="8" id="suy-UR-Wjq"/>
                                     </constraints>
@@ -270,7 +267,7 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="9t3-Mw-cME" firstAttribute="top" secondItem="r4I-FX-RLZ" secondAttribute="bottom" id="CAv-TQ-aUa"/>
+                                <constraint firstItem="9t3-Mw-cME" firstAttribute="top" secondItem="r4I-FX-RLZ" secondAttribute="bottom" id="0KX-xt-jnm"/>
                                 <constraint firstAttribute="trailing" secondItem="9t3-Mw-cME" secondAttribute="trailing" id="DaL-j0-od8"/>
                                 <constraint firstAttribute="bottom" secondItem="9t3-Mw-cME" secondAttribute="bottom" id="JNj-JZ-CbW"/>
                                 <constraint firstItem="9t3-Mw-cME" firstAttribute="leading" secondItem="PLY-rh-swF" secondAttribute="leading" id="Jto-so-OkG"/>
@@ -278,7 +275,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="articleCell" rowHeight="350" id="QZs-U3-dZp" customClass="NewsFeedTableViewCell" customModule="NewsApi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="378" width="414" height="350"/>
+                                <rect key="frame" x="0.0" y="278" width="414" height="350"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QZs-U3-dZp" id="5hc-Wc-CkS">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
